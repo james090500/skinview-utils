@@ -147,8 +147,8 @@ export function loadCapeToCanvas(canvas: TextureCanvas, image: TextureSource, of
 	}
 }
 
-export function animateCape(capeCanvas: TextureCanvas, image: TextureSource): void {
-	if(!isCapeAnimated) return;
+export function animateCape(capeCanvas: TextureCanvas, image: TextureSource): boolean {
+	if(!isCapeAnimated) return false;
 
 	if (image.height !== image.width / 2) {
 		const currentTime = Date.now();
@@ -160,9 +160,11 @@ export function animateCape(capeCanvas: TextureCanvas, image: TextureSource): vo
 			lastFrameTime = currentTime;
 
 			const offset = currentFrame * (image.width / 2);
-			loadCapeToCanvas(capeCanvas, image, offset)
+			loadCapeToCanvas(capeCanvas, image, offset);
+			return true;
 		}
 	}
+	return false;
 }
 
 export function loadEarsToCanvas(canvas: TextureCanvas, image: TextureSource): void {
