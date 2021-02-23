@@ -169,9 +169,9 @@ export function loadEarsToCanvas(canvas: TextureCanvas, image: TextureSource): v
 	canvas.width = 14;
 	canvas.height = 7;
 
-	const context = canvas.getContext("2d");
-	context?.clearRect(0, 0, canvas.width, canvas.height);
-	context?.drawImage(image, 0, 0, image.width, image.height);
+	const context = canvas.getContext("2d")!;
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.drawImage(image, 0, 0, image.width, image.height);
 }
 
 function isAreaBlack(context: CanvasImageData, x0: number, y0: number, w: number, h: number): boolean {
