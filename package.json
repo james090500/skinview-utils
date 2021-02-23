@@ -1,5 +1,5 @@
 {
-	"name": "skinview-utils",
+	"name": "@james090500/skinview-utils",
 	"version": "0.6.0",
 	"description": "Utilities for working with Minecraft skins",
 	"type": "module",
